@@ -27,3 +27,20 @@
 1. 플러터
 2. 웹 개발
 3. 서버 프로그래밍
+
+<br>
+<br>
+
+## 4. 문법
+
+### 1. Variables
+
+dart 문법에서는 여러가지 변수 선언 방법이 있다. (variable 폴더에 예시 코드 확인)
+
+-   var: 함수나 메소드 내부에 지역 변수를 선언할 때 사용한다.
+-   data type: class에서 변수나 property를 선언할 때 사용한다.
+-   dynamic: 여러가지 타입을 가질 수 있는 변수 선언이다. (필요할때만 사용 권장)
+-   nullable : 변수뒤에 '?' 를 넣을 경우 이 변수는 null 이 될수 있음을 표시한다. ex) String? test
+-   final: 변수의 값을 한번만 할당 할 수 있게 한다.
+-   late: 변수의 값을 나중에 할당 할 수 있게 한다.
+-   const: 컴파일시에 값이 할당 되어 있어야 한다. ex) const test = fetchApi() - X, const test = '12311123' - O
