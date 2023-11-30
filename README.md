@@ -7,6 +7,8 @@
 3. [사용 분야](#3-사용-분야)
 4. [문법](#4-문법)<br>
    4-1. [Variables](#1-variables)<br>
+   4-2. [DataTypes](#2-data-types)<br>
+   4-3. [Functions](#3-functions)<br>
 
 ## 1. 프로젝트 설명
 
@@ -176,3 +178,65 @@ void main() {
 ```
 
 <br>
+
+#### Optional Positional Parameters
+
+함수의 파라미터 중에서 일부가 생략될 수 있는 파라미터를 의미한다다. 이러한 파라미터는 함수 호출 시에 값을 제공할 수도 있고, 제공하지 않을 수도 있다. <br>
+Dart에서는 옵셔널 위치 파라미터를 대괄호 []를 사용하여 정의한다.
+
+```dart
+String sayHello2(String name, [int? age = 99]) {
+  return 'hello my name is $name, my age $age';
+}
+
+void main() {
+  print(sayHello2('hello'));
+}
+
+```
+
+<br>
+
+#### QQ Operator
+
+"??", 즉 "null-aware" 또는 "null=awareness" 연산자는 피연산자가 'null'이 아닌 경우 피연산자의 값을 반환하고, 'null'일경우 다른값으로 대체하는 연산자 이다.
+
+```dart
+String capitalizeName(String? name) =>
+    name != null ? name.toUpperCase() : 'ANON';
+
+void main() {
+  String? name;
+  name ??= 'kyh';
+
+  print(capitalizeName(name));
+
+  name = null;
+  print(capitalizeName(name));
+}
+```
+
+<br>
+
+#### Typedef
+
+함수 타입을 정의하기 위한 키워드이다. 함수 타입을 정의하면 해당 타입을 변수에 할당하거나 함수의 매개변수 또는 반환 타입으로 사용할 수 있다.
+
+```dart
+typedef ListType = List<int>;
+typedef DataType = Map<String, String>;
+
+ListType reverseList(List<int> list) {
+  var reverse = list.reversed;
+  return reverse.toList();
+}
+
+String sayHello(DataType datas) {
+  return 'hello ${datas['name']}';
+}
+
+void main() {
+  print(reverseList([1, 2, 3]));
+  print(sayHello({"name": 'kyh'}));
+}
+```
